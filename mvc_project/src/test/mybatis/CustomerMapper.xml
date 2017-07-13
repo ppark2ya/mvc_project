@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : 해당 xml 문서의 이름을 지정 -->
+<!-- select : select 문 실행 -->
+<!-- id : 함수 이름 -->
+<!-- resultType : select 결과셋을 저장하는 객체타입 -->
+<!-- 부득이하게 컬럼명과 dto 데이터의 변수명이 다를경우 as를 사용해서 맞춘다. -->
+<mapper namespace="customer">
+	
+</mapper>
