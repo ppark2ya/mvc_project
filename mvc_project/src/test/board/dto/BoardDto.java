@@ -1,65 +1,55 @@
 package test.board.dto;
 
 public class BoardDto {
-	private int num;
-	private String id;
-	private String category;
+	private int board_num;
+	private String cust_id;
 	private String title;
-	private String writer;
+	private String category;
 	private String content;
 	private String regdate;
 	
 	public BoardDto(){}
 
-	public BoardDto(int num, String id, String category, String title, String writer, String content, String regdate) {
+	public BoardDto(int board_num, String cust_id, String title, String category, String content, String regdate) {
 		super();
-		this.num = num;
-		this.id = id;
-		this.category = category;
+		this.board_num = board_num;
+		this.cust_id = cust_id;
 		this.title = title;
-		this.writer = writer;
+		this.category = category;
 		this.content = content;
 		this.regdate = regdate;
 	}
 
-	public int getNum() {
-		return num;
+	public int getBoard_num() {
+		return board_num;
 	}
 
-	public void setNum(int num) {
-		this.num = num;
+	public void setBoard_num(int board_num) {
+		this.board_num = board_num;
 	}
 
-	public String getId() {
-		return id;
+	public String getCust_id() {
+		return cust_id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setCust_id(String cust_id) {
+		this.cust_id = cust_id;
 	}
 
-	public String getCategory(){
-		return category;
-	}
-	
-	public void setCategory(String category){
-		this.category = category;
-	}
-	
 	public String getTitle() {
 		return title;
 	}
-	
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public String getWriter() {
-		return writer;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
 	public String getContent() {
@@ -77,5 +67,6 @@ public class BoardDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+	
 	
 }

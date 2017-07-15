@@ -6,5 +6,37 @@
 <!-- resultType : select 결과셋을 저장하는 객체타입 -->
 <!-- 부득이하게 컬럼명과 dto 데이터의 변수명이 다를경우 as를 사용해서 맞춘다. -->
 <mapper namespace="customer">
+	<select id="isValid" parameterType="test.customer.dto.CustomerDto" resultType="test.customer.dto.CustomerDto">
+		SELECT id, pwd
+		FROM customer
+		WHERE id=#{id} and pwd=#{pwd}
+	</select>
 	
+	<select id="getData" parameterType="String" resultType="test.customer.dto.CustomerDto">
+		SELECT id, pwd, name, phone, email, TO_CHAR(regdate, 'YYYY/MM/DD') as regdate
+		FROM customer
+		WHERE id=#{id}
+	</select>
+	
+	<insert id="insert" parameterType="test.customer.dto.CustomerDto">
+		INSERT INTO customer
+		(id, pwd, name, phone, email, regdate)
+		VALUES (#{id}, #{pwd}, #{name}, #{phone}, #{email}, SYSDATE)
+	</insert>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM customer WHERE id=#{id}
+	</delete>
+	
+	<update id="update" parameterType="test.customer.dto.CustomerDto">
+		UPDATE customer
+		SET pwd=#{pwd}, phone=#{phone}, email=#{email} 
+		WHERE id=#{id}
+	</update>
+	
+	<update id="modifyPwd" parameterType="test.customer.dto.CustomerDto">
+		UPDATE customer
+		SET pwd=#{pwd}
+		WHERE id=#{id}
+	</update>
 </mapper>
