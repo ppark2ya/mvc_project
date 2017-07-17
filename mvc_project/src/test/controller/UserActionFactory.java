@@ -12,6 +12,11 @@ import test.customer.action.SignupAction;
 import test.customer.action.SignupFormAction;
 import test.customer.action.UpdateAction;
 import test.customer.action.UpdateFormAction;
+import test.board.action.BoardMainAction;
+import test.board.action.DropoutAction;
+import test.board.action.ViewContentAction;
+import test.board.action.WriteAction;
+import test.board.action.WriteFormAction;
 
 public class UserActionFactory {
 	private static UserActionFactory factory;
@@ -41,7 +46,7 @@ public class UserActionFactory {
 		}else if(command.equals("/customer/myPage")){
 			action = new MyPageAction();
 		}else if(command.equals("/customer/dropout")){
-			action = new DropoutAction();
+			action = new test.customer.action.DropoutAction();
 		}else if(command.equals("/customer/updateform")){
 			action = new UpdateFormAction();
 		}else if(command.equals("/customer/update")){
@@ -50,6 +55,20 @@ public class UserActionFactory {
 			action = new ForgetPasswordFormAction();
 		}else if(command.equals("/customer/resetpassword")){
 			action = new ResetPasswordAction();
+		}else if(command.equals("/board/boardmain")){
+			action = new BoardMainAction();
+		}else if(command.equals("/board/writeform")){
+			action = new WriteFormAction();
+		}else if(command.equals("/board/write")){
+			action = new WriteAction();
+		}else if(command.equals("/board/viewcontent")){
+			action = new ViewContentAction();
+		}else if(command.equals("/board/updateform")){
+			action = new test.board.action.UpdateFormAction();
+		}else if(command.equals("/board/update")){
+			action = new test.board.action.UpdateAction();
+		}else if(command.equals("/board/delete")){
+			action = new DropoutAction();
 		}
 		return action;
 	}

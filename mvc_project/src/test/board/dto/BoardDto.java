@@ -5,18 +5,18 @@ public class BoardDto {
 	private String cust_id;
 	private String title;
 	private String category;
-	private String clob;
+	private String content;
 	private String regdate;
 	
 	public BoardDto(){}
 
-	public BoardDto(int board_num, String cust_id, String title, String category, String clob, String regdate) {
+	public BoardDto(int board_num, String cust_id, String title, String category, String content, String regdate) {
 		super();
 		this.board_num = board_num;
 		this.cust_id = cust_id;
 		this.title = title;
 		this.category = category;
-		this.clob = clob;
+		this.content = content;
 		this.regdate = regdate;
 	}
 
@@ -52,12 +52,12 @@ public class BoardDto {
 		this.category = category;
 	}
 
-	public String getClob() {
-		return clob;
+	public String getContent() {
+		return content;
 	}
 
-	public void setClob(String clob) {
-		this.clob = clob;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public String getRegdate() {
