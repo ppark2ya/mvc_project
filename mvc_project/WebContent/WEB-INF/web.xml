@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>Step18_MyBatis</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+   <!-- 인코딩 필터 정의하기 -->
+ <filter>
+ 	<filter-name>EncodingFilter</filter-name>
+ 	<filter-class>test.filter.EncodingFilter</filter-class>
+ 	<init-param>
+ 		<param-name>myEncoding</param-name>
+ 		<param-value>utf-8</param-value>
+ 	</init-param>
+ </filter>
+ 
+ <!-- 인코딩 필터 맵핑하기 -->
+ <filter-mapping>
+ 	<filter-name>EncodingFilter</filter-name>
+ 	<!-- /* : root 하위의 모든 요청 -->
+ 	<url-pattern>/*</url-pattern>
+ </filter-mapping>
+ 
+ <!-- 404 에러가 발생했을 때 이동될 페이지 정보 -->
+ <error-page>
+ 	<error-code>404</error-code>
+ 	<location>/error/404.jsp</location>
+ </error-page>
+
+ <!-- 500 에러가 발생했을 때 이동될 페이지 정보 -->
+ <error-page>
+ 	<error-code>500</error-code>
+ 	<location>/error/500.jsp</location>
+ </error-page>
+</web-app>
