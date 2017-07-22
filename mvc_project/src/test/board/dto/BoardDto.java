@@ -1,21 +1,12 @@
 package test.board.dto;
 
 public class BoardDto {
-<<<<<<< HEAD
 	private int board_num;		// 글번호
 	private String writer;	// 작성자
 	private String title;	// 글제목
 	private String category;
 	private String content;	// 글내용
 	private String regdate;	// 작성일
-=======
-	private int board_num;
-	private String cust_id;
-	private String title;
-	private String category;
-	private String content;
-	private String regdate;
->>>>>>> branch 'master' of https://github.com/ppark2ya/mvc_project.git
 	
 	private int startRowNum; // 시작 row 번호
 	private int endRowNum;	 // 끝 row 번호

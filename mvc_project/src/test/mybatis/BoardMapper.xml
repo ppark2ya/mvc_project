@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<<<<<<< HEAD
 <mapper namespace="board">
 	<select id="getList" parameterType="boardDto" resultType="boardDto">
 	SELECT *
@@ -25,13 +24,6 @@
 			  ) result1
 		  )
 	WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
-=======
-<mapper namespace="board">
-	<select id="getList" resultType="test.board.dto.BoardDto">
-		SELECT board_num, cust_id, title, category, content, TO_CHAR(regdate, 'YYYY/MM/DD') as regdate
-		FROM board
-		ORDER BY board_num DESC
->>>>>>> branch 'master' of https://github.com/ppark2ya/mvc_project.git
 	</select>
 	
 	<select id="getData" parameterType="boardDto" resultType="boardDto">
@@ -73,14 +65,10 @@
 	
 	<delete id="delete" parameterType="int">
 		DELETE FROM board WHERE board_num=#{board_num}
-<<<<<<< HEAD
 	</delete>
 	
 	<select id="getCount" resultType="int">
 		SELECT NVL(MAX(ROWNUM), 0)
 		FROM board
 	</select>
-=======
-	</delete>
->>>>>>> branch 'master' of https://github.com/ppark2ya/mvc_project.git
 </mapper>

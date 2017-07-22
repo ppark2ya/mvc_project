@@ -1,16 +1,11 @@
 package test.controller;
 
-<<<<<<< HEAD
 import test.action.HomeAction;
 import test.board.action.BoardListAction;
 import test.board.action.BoardDeleteAction;
 import test.board.action.BoardDetailAction;
 import test.board.action.WriteAction;
 import test.board.action.WriteFormAction;
-=======
-import test.action.HomeAction;
-import test.customer.action.DropoutAction;
->>>>>>> branch 'master' of https://github.com/ppark2ya/mvc_project.git
 import test.customer.action.ForgetPasswordFormAction;
 import test.customer.action.MyPageAction;
 import test.customer.action.ResetPasswordAction;
@@ -21,11 +16,6 @@ import test.customer.action.SignupAction;
 import test.customer.action.SignupFormAction;
 import test.customer.action.UpdateAction;
 import test.customer.action.UpdateFormAction;
-import test.board.action.BoardMainAction;
-import test.board.action.DropoutAction;
-import test.board.action.ViewContentAction;
-import test.board.action.WriteAction;
-import test.board.action.WriteFormAction;
 
 public class UserActionFactory {
 	private static UserActionFactory factory;
@@ -76,13 +66,8 @@ public class UserActionFactory {
 			action = new test.board.action.UpdateFormAction();
 		}else if(command.equals("/board/members/update")){
 			action = new test.board.action.UpdateAction();
-<<<<<<< HEAD
 		}else if(command.equals("/board/members/delete")){
 			action = new BoardDeleteAction();
-=======
-		}else if(command.equals("/board/delete")){
-			action = new DropoutAction();
->>>>>>> branch 'master' of https://github.com/ppark2ya/mvc_project.git
 		}
 		return action;
 	}

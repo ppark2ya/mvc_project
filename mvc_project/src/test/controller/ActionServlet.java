@@ -17,6 +17,8 @@ public class ActionServlet extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
+		//실행중이던 곳으로 돌아가기위한 url
+		String url = request.getParameter("url");
 		//요청 URI 읽어오기
 		String uri=request.getRequestURI();
 		//context name 읽어오기
@@ -39,7 +41,11 @@ public class ActionServlet extends HttpServlet{
 			}
 			if(af.isRedirect()){//redirect 이동해야 한다면
 				//redirect 이동 시킨다.
-				response.sendRedirect(contextName+af.getPath());
+				if(url == null){
+					response.sendRedirect(contextName+af.getPath());
+				}else{
+					response.sendRedirect(af.getPath());
+				}
 			}else{//forward 이동해야 한다면 
 				RequestDispatcher rd=
 						request.getRequestDispatcher(af.getPath());
