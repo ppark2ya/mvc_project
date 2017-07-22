@@ -14,6 +14,6 @@ public class MyPageAction extends Action{
 		String id = (String)request.getSession().getAttribute("id");
 		CustomerDto dto = CustomerDao.getInstance().getData(id);
 		request.setAttribute("dto", dto);
-		return new ActionForward("/views/customer/myPage.jsp");
+		return new ActionForward("/views/customer/private/myPage.jsp");
 	}
 }

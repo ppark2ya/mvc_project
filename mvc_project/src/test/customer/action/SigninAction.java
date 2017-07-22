@@ -14,6 +14,7 @@ public class SigninAction extends Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
+		String url = request.getParameter("url");
 		CustomerDto dto = new CustomerDto();
 		dto.setId(id);
 		dto.setPwd(pwd);
@@ -27,8 +28,14 @@ public class SigninAction extends Action{
 		}
 		if(isValid){
 			request.getSession().setAttribute("id", id);
-			return new ActionForward("/home.do", true);
+			if(url == null){
+				return new ActionForward("/home.do", true);
+			}else{
+				System.out.println("ok redirect!");
+				return new ActionForward(url, true);
+			}
 		}else{
+			request.setAttribute("url", url);
 			return new ActionForward("/views/customer/signin_error.jsp");
 		}
 	}

@@ -21,6 +21,6 @@ public class UpdateAction extends Action{
 		dto.setCategory(category);
 		dto.setContent(content);
 		BoardDao.getInstance().update(dto);
-		return new ActionForward("/board/viewcontent.do?board_num="+board_num, true);
+		return new ActionForward("/board/detail.do?board_num="+board_num, true);
 	}
 }

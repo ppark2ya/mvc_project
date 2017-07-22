@@ -39,7 +39,7 @@
 	<div class="container">
 		<div class="col-xs-8 col-xs-offset-4">
 			<a href="../home.do">
-				<img src="${pageContext.request.contextPath }/views/resource/images/reservation.PNG" id="headerlogo">
+				<img src="${pageContext.request.contextPath }/resource/images/reservation.PNG" id="headerlogo">
 			</a>
 		</div>
 		<div class="col-xs-2"></div>

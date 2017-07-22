@@ -1,9 +1,9 @@
 package test.controller;
 
 import test.action.HomeAction;
-import test.board.action.BoardMainAction;
-import test.board.action.DropoutAction;
-import test.board.action.ViewContentAction;
+import test.board.action.BoardListAction;
+import test.board.action.BoardDeleteAction;
+import test.board.action.BoardDetailAction;
 import test.board.action.WriteAction;
 import test.board.action.WriteFormAction;
 import test.customer.action.ForgetPasswordFormAction;
@@ -42,32 +42,32 @@ public class UserActionFactory {
 			action = new SigninAction();
 		}else if(command.equals("/customer/signout")){
 			action = new SignoutAction();
-		}else if(command.equals("/customer/myPage")){
+		}else if(command.equals("/customer/private/myPage")){
 			action = new MyPageAction();
-		}else if(command.equals("/customer/dropout")){
+		}else if(command.equals("/customer/private/dropout")){
 			action = new test.customer.action.DropoutAction();
-		}else if(command.equals("/customer/updateform")){
+		}else if(command.equals("/customer/private/updateform")){
 			action = new UpdateFormAction();
-		}else if(command.equals("/customer/update")){
+		}else if(command.equals("/customer/private/update")){
 			action = new UpdateAction();
 		}else if(command.equals("/customer/forgetpasswordform")){
 			action = new ForgetPasswordFormAction();
 		}else if(command.equals("/customer/resetpassword")){
 			action = new ResetPasswordAction();
-		}else if(command.equals("/board/boardmain")){
-			action = new BoardMainAction();
-		}else if(command.equals("/board/writeform")){
+		}else if(command.equals("/board/boardlist")){
+			action = new BoardListAction();
+		}else if(command.equals("/board/members/writeform")){
 			action = new WriteFormAction();
-		}else if(command.equals("/board/write")){
+		}else if(command.equals("/board/members/write")){
 			action = new WriteAction();
-		}else if(command.equals("/board/viewcontent")){
-			action = new ViewContentAction();
-		}else if(command.equals("/board/updateform")){
+		}else if(command.equals("/board/detail")){
+			action = new BoardDetailAction();
+		}else if(command.equals("/board/members/updateform")){
 			action = new test.board.action.UpdateFormAction();
-		}else if(command.equals("/board/update")){
+		}else if(command.equals("/board/members/update")){
 			action = new test.board.action.UpdateAction();
-		}else if(command.equals("/board/delete")){
-			action = new DropoutAction();
+		}else if(command.equals("/board/members/delete")){
+			action = new BoardDeleteAction();
 		}
 		return action;
 	}

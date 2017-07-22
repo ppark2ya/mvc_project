@@ -10,7 +10,7 @@
 <body>
 <script>
 	alert("아이디 혹은 패스워드가 잘못되었습니다.");
-	location.href = "signinform.do";
+	location.href = "signinform.do?url=${url}";
 </script>
 </body>
 </html>

@@ -1,23 +1,34 @@
 package test.board.dto;
 
 public class BoardDto {
-	private int board_num;
-	private String cust_id;
-	private String title;
+	private int board_num;		// 글번호
+	private String writer;	// 작성자
+	private String title;	// 글제목
 	private String category;
-	private String content;
-	private String regdate;
+	private String content;	// 글내용
+	private String regdate;	// 작성일
 	
+	private int startRowNum; // 시작 row 번호
+	private int endRowNum;	 // 끝 row 번호
+	private int prevNum;	// 이전 글의 글 번호
+	private int nextNum;	// 다음 글의 글 번호
+
+	// 디폴트 생성자
 	public BoardDto(){}
 
-	public BoardDto(int board_num, String cust_id, String title, String category, String content, String regdate) {
+	public BoardDto(int board_num, String writer, String title, String category, String content, String regdate,
+			int startRowNum, int endRowNum, int prevNum, int nextNum) {
 		super();
 		this.board_num = board_num;
-		this.cust_id = cust_id;
+		this.writer = writer;
 		this.title = title;
 		this.category = category;
 		this.content = content;
 		this.regdate = regdate;
+		this.startRowNum = startRowNum;
+		this.endRowNum = endRowNum;
+		this.prevNum = prevNum;
+		this.nextNum = nextNum;
 	}
 
 	public int getBoard_num() {
@@ -28,12 +39,12 @@ public class BoardDto {
 		this.board_num = board_num;
 	}
 
-	public String getCust_id() {
-		return cust_id;
+	public String getWriter() {
+		return writer;
 	}
 
-	public void setCust_id(String cust_id) {
-		this.cust_id = cust_id;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
 	public String getTitle() {
@@ -67,6 +78,40 @@ public class BoardDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
+
+	public int getStartRowNum() {
+		return startRowNum;
+	}
+
+	public void setStartRowNum(int startRowNum) {
+		this.startRowNum = startRowNum;
+	}
+
+	public int getEndRowNum() {
+		return endRowNum;
+	}
+
+	public void setEndRowNum(int endRowNum) {
+		this.endRowNum = endRowNum;
+	}
+
+	public int getPrevNum() {
+		return prevNum;
+	}
+
+	public void setPrevNum(int prevNum) {
+		this.prevNum = prevNum;
+	}
+
+	public int getNextNum() {
+		return nextNum;
+	}
+
+	public void setNextNum(int nextNum) {
+		this.nextNum = nextNum;
+	}
+
 	
+
 	
 }

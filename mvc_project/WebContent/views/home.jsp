@@ -6,13 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="myResource.jsp"></jsp:include>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/views/resource/css/header.css?ver=1" />
-<link rel="stylesheet" href="${pageContext.request.contextPath }/views/resource/css/main.css?ver=1" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resource/css/header.css?ver=1" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/resource/css/main.css?ver=1" />
 <title></title>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 <jsp:include page="main.jsp"></jsp:include>
-<script src="${pageContext.request.contextPath }/views/resource/js/time.js"></script>
+<script src="${pageContext.request.contextPath }/resource/js/time.js"></script>
 </body>
 </html>

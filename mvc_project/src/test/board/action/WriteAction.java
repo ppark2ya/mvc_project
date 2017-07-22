@@ -15,11 +15,11 @@ public class WriteAction extends Action{
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		BoardDto dto = new BoardDto();
-		dto.setCust_id((String)request.getSession().getAttribute("id"));
+		dto.setWriter((String)request.getSession().getAttribute("id"));
 		dto.setCategory(category);
 		dto.setTitle(title);
 		dto.setContent(content);
 		BoardDao.getInstance().insert(dto);
-		return new ActionForward("/board/boardmain.do", true);
+		return new ActionForward("/board/boardlist.do", true);
 	}
 }

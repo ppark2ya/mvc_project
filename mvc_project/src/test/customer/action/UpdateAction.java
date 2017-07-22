@@ -21,6 +21,6 @@ public class UpdateAction extends Action{
 		dto.setPhone(phone);
 		dto.setEmail(email);
 		CustomerDao.getInstance().update(dto);
-		return new ActionForward("/customer/myPage.do", true);
+		return new ActionForward("/customer/private/myPage.do", true);
 	}
 }

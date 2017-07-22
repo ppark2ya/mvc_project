@@ -28,7 +28,7 @@
         <div class="col-md-12">
         <div class="page-header text-center">
         	<a href="${pageContext.request.contextPath }/home.do">
-        		<img src="${pageContext.request.contextPath }/views/resource/images/reservation.PNG" id="headerlogo">
+        		<img src="${pageContext.request.contextPath }/resource/images/reservation.PNG" id="headerlogo">
         	</a>
         </div>
         <form action="signup.do" method="post" id="myForm" class="form-horizontal">

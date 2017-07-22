@@ -41,7 +41,7 @@
 	<div class="container">
 		<div class="col-xs-8 col-xs-offset-4">
 			<a href="../home.do">
-				<img src="${pageContext.request.contextPath }/views/resource/images/reservation.PNG" id="headerlogo">
+				<img src="${pageContext.request.contextPath }/resource/images/reservation.PNG" id="headerlogo">
 			</a>
 		</div>
 		<div class="col-xs-2"></div>
@@ -49,7 +49,14 @@
 		
 		<div class="col-xs-2"></div>
 		<div class="col-xs-8 col-md-offset-4">
+		<c:choose>
+		<c:when test="${empty param.url }">
 			<form action="signin.do" method="post" id="myForm">
+		</c:when>
+		<c:otherwise>
+			<form action="signin.do?url=${param.url }" method="post" id="myForm">
+		</c:otherwise>
+		</c:choose>
 				<div class="box form-group">
 					<div class="form-group">
 						<label for="id" class="control-label">ID</label>

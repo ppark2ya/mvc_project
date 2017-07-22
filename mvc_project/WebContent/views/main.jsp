@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!-- section start -->
-<section style="background: url(${pageContext.request.contextPath }/views/resource/images/background.jpg) center; background-color:#333;">
+<section style="background: url(${pageContext.request.contextPath }/resource/images/background.jpg) center; background-color:#333;">
 	<div class="container clearfix">
 		<div class="row">
 			<div class="col-md-12">

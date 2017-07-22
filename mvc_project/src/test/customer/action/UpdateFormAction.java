@@ -14,6 +14,6 @@ public class UpdateFormAction extends Action{
 		String id = (String)request.getSession().getAttribute("id");
 		CustomerDto dto = CustomerDao.getInstance().getData(id);
 		request.setAttribute("dto", dto);
-		return new ActionForward("/views/customer/update_form.jsp");
+		return new ActionForward("/views/customer/private/update_form.jsp");
 	}
 }

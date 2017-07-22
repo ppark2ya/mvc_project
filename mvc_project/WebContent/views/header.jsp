@@ -9,20 +9,20 @@
 	</div>
 	<div id="hideLogo" class="col-xs-6 col-xs-offset-3">
 		<a href="home.do">
-			<img src="${pageContext.request.contextPath }/views/resource/images/reservation.PNG" alt="" />
+			<img src="${pageContext.request.contextPath }/resource/images/reservation.PNG" alt="" />
 		</a>
 	</div>
 	<div class="header">
 		<div id="headerlogo" class="col-xs-5">
 			<a href="home.do">
-				<img src="${pageContext.request.contextPath }/views/resource/images/reservation.PNG" alt="" />
+				<img src="${pageContext.request.contextPath }/resource/images/reservation.PNG" alt="" />
 			</a>
 		</div>
 		<div class="col-xs-2"></div>
 		<div id="topRightMenu" class="col-xs-5 text-center">
 			<ul class="menu">
 				<li class="subMenu">
-					<a href="board/boardmain.do">
+					<a href="board/boardlist.do">
 						<div class="menuBtn">BOARD</div>
 					</a>
 				</li>
@@ -45,7 +45,7 @@
 						<a href="customer/signout.do">
 							<div class="menuBtn">SIGN OUT</div>
 						</a>
-						<a href="customer/myPage.do">
+						<a href="customer/private/myPage.do">
 							<i class="glyphicon glyphicon-user"></i>
 						</a>
 					</li>

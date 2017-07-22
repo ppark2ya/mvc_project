@@ -22,19 +22,19 @@ public class BoardDao {
 	}
 
 	// 게시판 글들을 리턴하는 메소드
-	public List<BoardDto> getList(){
+	public List<BoardDto> getList(BoardDto dto){
 		SqlSession session = factory.openSession();
-		List<BoardDto> list = session.selectList("board.getList");
+		List<BoardDto> list = session.selectList("board.getList", dto);
 		session.close();
 		return list;
 	}
 	
 	// 글의 정보를 리턴하는 메소드
-	public BoardDto getData(int board_num){
+	public BoardDto getData(BoardDto dto){
 		SqlSession session = factory.openSession();
-		BoardDto dto = session.selectOne("board.getData", board_num);
+		BoardDto resultDto = session.selectOne("board.getData", dto);
 		session.close();
-		return dto;
+		return resultDto;
 	}
 	
 	// 글추가 메소드
@@ -56,5 +56,13 @@ public class BoardDao {
 		SqlSession session = factory.openSession(true);
 		session.delete("board.delete", board_num);
 		session.close();
+	}
+	
+	// DB 에 저장된 게시글 전체의 갯수를 리턴해주는 메소드
+	public int getCount(){
+		SqlSession session = factory.openSession();
+		int count = session.selectOne("board.getCount");
+		session.close();
+		return count;
 	}
 }

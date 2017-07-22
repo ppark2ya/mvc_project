@@ -9,7 +9,7 @@ create table customer(
 
 create table board(
 	board_num	number primary key, 	-- 게시판 번호
-	cust_id		varchar2(30) references customer(id) not null,	-- 고객 아이디(fk)
+	writer		varchar2(30) references customer(id) not null,	-- 고객 아이디(fk)
 	title		varchar2(100) not null,	-- 글 제목
 	category	varchar2(30) not null,	-- 글 카테고리
 	content		clob,					-- 글 내용
