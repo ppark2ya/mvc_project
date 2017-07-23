@@ -2,10 +2,12 @@ package test.controller;
 
 import test.action.HomeAction;
 import test.board.action.BoardListAction;
+import test.board.action.BoardCommentInsertAction;
 import test.board.action.BoardDeleteAction;
 import test.board.action.BoardDetailAction;
 import test.board.action.WriteAction;
 import test.board.action.WriteFormAction;
+import test.customer.action.CheckidAction;
 import test.customer.action.ForgetPasswordFormAction;
 import test.customer.action.MyPageAction;
 import test.customer.action.ResetPasswordAction;
@@ -36,6 +38,8 @@ public class UserActionFactory {
 			action = new SignupFormAction();
 		}else if(command.equals("/customer/signup")){
 			action = new SignupAction();
+		}else if(command.equals("/customer/checkid")){
+			action = new CheckidAction();
 		}else if(command.equals("/customer/signinform")){
 			action = new SigninFormAction();
 		}else if(command.equals("/customer/signin")){
@@ -62,6 +66,8 @@ public class UserActionFactory {
 			action = new WriteAction();
 		}else if(command.equals("/board/detail")){
 			action = new BoardDetailAction();
+		}else if(command.equals("/board/comment_insert")){
+			action = new BoardCommentInsertAction();
 		}else if(command.equals("/board/members/updateform")){
 			action = new test.board.action.UpdateFormAction();
 		}else if(command.equals("/board/members/update")){

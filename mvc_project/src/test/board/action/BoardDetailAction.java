@@ -1,9 +1,13 @@
 package test.board.action;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import test.board.dao.BoardCommentDao;
 import test.board.dao.BoardDao;
+import test.board.dto.BoardCommentDto;
 import test.board.dto.BoardDto;
 import test.controller.Action;
 import test.controller.ActionForward;
@@ -13,6 +17,7 @@ public class BoardDetailAction extends Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		// 1. 파라미터로 전달되는 글 번호를 읽어온다.
 		int board_num = Integer.parseInt(request.getParameter("board_num"));
+		BoardDao.getInstance().increaseViewCount(board_num);
 		// 검색과 관련된 파라미터를 읽어와본다.
 		String keyword = request.getParameter("keyword");
 		String condition = request.getParameter("condition");
@@ -35,8 +40,16 @@ public class BoardDetailAction extends Action{
 		dto.setBoard_num(board_num);
 		// 2. Dao 를 이용해서 글 정보를 얻어온다.
 		BoardDto resultdto = BoardDao.getInstance().getData(dto);
+		List<BoardCommentDto> commentList = BoardCommentDao.getInstance().getList(board_num);
 		// 3. request 에 글 정보를 담고
 		request.setAttribute("dto", resultdto);
+		request.setAttribute("commentList", commentList);
+		String id = (String)request.getSession().getAttribute("id");
+		boolean isLogin = false;
+		if(id != null){
+			isLogin = true;
+		}
+		request.setAttribute("isLogin", isLogin);
 		// 4. 뷰페이지로 forward 이동
 		return new ActionForward("/views/board/detail.jsp");
 	}

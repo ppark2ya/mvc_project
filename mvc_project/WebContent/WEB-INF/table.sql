@@ -16,6 +16,16 @@ create table board(
 	regdate		date not null			-- 글 작성일
 );
 
+create table board_comment(
+	board_num	number primary key,
+	writer		varchar2(30) references customer(id) not null,
+	content		varchar2(500),
+	target_id	varchar2(100),
+	ref_group	number,
+	comment_group number,
+	regdate		date
+);
+
 create table hotel(
     hotel_id    number primary key,		-- 호텔 고유 번호(pk)
     city_id     number not null,		-- 도시 고유 번호(fk)

@@ -4,7 +4,7 @@
 	<select id="getList" parameterType="boardDto" resultType="boardDto">
 	SELECT *
 	FROM (SELECT result1.*, ROWNUM rnum
-		  FROM (SELECT board_num, writer, title, category, content, regdate
+		  FROM (SELECT board_num, writer, title, category, content, viewCount, regdate
 			    FROM board
 			    <where>
 			    	<if test="writer != null">
@@ -28,7 +28,7 @@
 	
 	<select id="getData" parameterType="boardDto" resultType="boardDto">
 		SELECT result1.*
-		FROM (SELECT board_num, writer, title, category, content,
+		FROM (SELECT board_num, writer, title, category, content, viewCount,
 					 TO_CHAR(regdate, 'YYYY.MM.DD AM HH:MI') regdate,
 					 LAG(board_num, 1, 0) OVER(ORDER BY board_num DESC) as prevNum,
 					 LEAD(board_num, 1, 0) OVER(ORDER BY board_num DESC) as nextNum
@@ -53,8 +53,8 @@
 	
 	<insert id="insert" parameterType="test.board.dto.BoardDto">
 		INSERT INTO board 
-		(board_num, writer, title, category, content, regdate)	
-		VALUES(board_seq.NEXTVAL, #{writer}, #{title}, #{category}, #{content}, SYSDATE)
+		(board_num, writer, title, category, content, viewCount, regdate)	
+		VALUES(board_seq.NEXTVAL, #{writer}, #{title}, #{category}, #{content}, #{viewCount}, SYSDATE)
 	</insert>
 	
 	<update id="update" parameterType="test.board.dto.BoardDto">
@@ -71,4 +71,10 @@
 		SELECT NVL(MAX(ROWNUM), 0)
 		FROM board
 	</select>
+	
+	<update id="increaseViewCount" parameterType="int">
+		UPDATE board
+		SET viewCount=viewCount+1
+		WHERE board_num=#{board_num}
+	</update>
 </mapper>

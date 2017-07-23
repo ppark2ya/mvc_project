@@ -8,6 +8,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<properties resource="test/mybatis/db.properties"/>
 	<typeAliases>
 		<typeAlias type="test.board.dto.BoardDto" alias="boardDto"/>
+		<typeAlias type="test.board.dto.BoardCommentDto" alias="boardCommentDto"/>
 	</typeAliases>
 	<!-- 환경설정 -->
 	<environments default="dev">
@@ -25,5 +26,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="test/mybatis/CustomerMapper.xml"/>
 		<mapper resource="test/mybatis/BoardMapper.xml"/>
+		<mapper resource="test/mybatis/BoardCommentMapper.xml"/>
 	</mappers>
 </configuration>

@@ -32,10 +32,12 @@
         	</a>
         </div>
         <form action="signup.do" method="post" id="myForm" class="form-horizontal">
-	        <div class="form-group">
+	        <div class="form-group has-feedback">
 	            <label class="col-sm-3 control-label" for="id">ID</label>
 	          	<div class="col-sm-6">
 	            	<input class="form-control" id="id" name="id" type="text" placeholder="Enter your ID">
+	            	<p class="help-block">can't use this ID</p>
+	          		<span class="glyphicon form-control-feedback"></span>
 	          	</div>
 	        </div>
 	        <div class="form-group">
@@ -93,6 +95,45 @@
     	location.href ="${pageContext.request.contextPath }/home.do";
    	});
 
+  	//아이디 입력란에 keyup 이벤트가 발생했을때 실행할 함수 등록 
+// 	$("#id").on("keyup", function(){
+// 		//입력한 아이디 읽어오기
+// 		var inputId=$("#id").val();
+// 		//ajax 요청을 이용해서 서버에 전송
+// 		$.ajax({
+// 			url:"checkid.do",
+// 			method:"get",
+// 			data:{inputId:inputId},
+			
+// 			success:function(data){
+// 				console.log(data);
+// 				$("#id").parent()
+// 				.removeClass("has-success has-error");
+// 				if(data.canUse){
+// 					$("#id")
+// 					.parent()
+// 					.addClass("has-success")
+// 					.find(".help-block")
+// 					.hide()
+// 					.parent()
+// 					.find(".glyphicon")
+// 					.removeClass("glyphicon-remove")
+// 					.addClass("glyphicon-ok");
+// 				}else{
+// 					$("#id")
+// 					.parent()
+// 					.addClass("has-error")
+// 					.find(".help-block")
+// 					.show()
+// 					.parent()
+// 					.find(".glyphicon")
+// 					.removeClass("glyphicon-ok")
+// 					.addClass("glyphicon-remove");
+// 				}
+// 			}
+// 		});
+// 	});
+  	
    	$('#myForm').on('submit', function(){
    		// 이메일 형식이 유효하지 않으면 
    		if(!isEmailValid && !isNumberValid){

@@ -6,6 +6,7 @@ public class BoardDto {
 	private String title;	// 글제목
 	private String category;
 	private String content;	// 글내용
+	private int viewCount;
 	private String regdate;	// 작성일
 	
 	private int startRowNum; // 시작 row 번호
@@ -16,14 +17,15 @@ public class BoardDto {
 	// 디폴트 생성자
 	public BoardDto(){}
 
-	public BoardDto(int board_num, String writer, String title, String category, String content, String regdate,
-			int startRowNum, int endRowNum, int prevNum, int nextNum) {
+	public BoardDto(int board_num, String writer, String title, String category, String content, int viewCount,
+			String regdate, int startRowNum, int endRowNum, int prevNum, int nextNum) {
 		super();
 		this.board_num = board_num;
 		this.writer = writer;
 		this.title = title;
 		this.category = category;
 		this.content = content;
+		this.viewCount = viewCount;
 		this.regdate = regdate;
 		this.startRowNum = startRowNum;
 		this.endRowNum = endRowNum;
@@ -71,6 +73,14 @@ public class BoardDto {
 		this.content = content;
 	}
 
+	public int getViewCount() {
+		return viewCount;
+	}
+
+	public void setViewCount(int viewCount) {
+		this.viewCount = viewCount;
+	}
+
 	public String getRegdate() {
 		return regdate;
 	}
@@ -111,7 +121,4 @@ public class BoardDto {
 		this.nextNum = nextNum;
 	}
 
-	
-
-	
 }

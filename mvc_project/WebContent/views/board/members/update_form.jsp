@@ -31,7 +31,7 @@
 				<td><label for="category">카테고리</label></td>
 				<td>
 					<select name="category" id="category">
-						<option value="ticket">ticket</option>
+						<option value="ticket" selected="selected">ticket</option>
 						<option value="hotel">hotel</option>
 						<option value="rent">rent</option>
 					</select>

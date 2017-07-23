@@ -65,4 +65,23 @@ public class CustomerDao {
 		session.update("customer.modifyPwd", dto);
 		session.close();
 	}
+	
+	//인자로 전달되는 아이디로 가입할수 있는지 여부를 리턴해주는 메소드
+	public boolean canUseId(String id){
+		SqlSession session=factory.openSession();
+		String result=null;
+		try{
+			result=session.selectOne("customer.isExistId", id);
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		//result 가 null 이면 사용가능한 아이디 이다. 
+		if(result==null){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

@@ -73,6 +73,7 @@
                 <th class="center">카테고리</th>
                 <th class="center">제목</th>
                 <th class="center">작성자</th>
+                <th class="center">조회수</th>
                 <th class="center">작성일</th>
             </tr>
         </thead>
@@ -85,6 +86,7 @@
        					<a href="detail.do?board_num=${tmp.board_num }&condition=${condition}&keyword=${keyword}">${tmp.title }</a>
         			</td>
         			<td>${tmp.writer }</td>
+        			<td>${tmp.viewCount }</td>
         			<td>${tmp.regdate }</td>
         		</tr>
         	</c:forEach>
